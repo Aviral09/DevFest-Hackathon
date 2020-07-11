@@ -1,0 +1,51 @@
+* {
+    margin: none;
+    padding: none;
+}
+
+body {
+    background-image: url(https://source.unsplash.com/1600x900/?workplace,office);
+}
+
+#super-container {
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+
+#inner-container {
+    background: rgba(256, 256, 256, 0.8);
+    border-style: transparent;
+}
+
+#username,
+#password {
+    padding: 10px;
+    height: 2.5rem;
+    width: 98%;
+    margin: 5px;
+}
+
+#sign-in-div {
+    display: flex;
+    justify-content: center;
+}
+
+#sign-in-button {
+    padding: 8px 25px;
+    background: #1fa560;
+    color: #fff;
+    border-radius: 5px;
+    border-style: none;
+}
+
+#inner-container {
+    padding: 50px;
+    align-items: center;
+    max-width: 500px;
+    border: 1px solid black;
+    vertical-align: middle;
+    align-self: center;
+    display: flex;
+    justify-content: center
+}
