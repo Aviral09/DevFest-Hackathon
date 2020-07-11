@@ -14,22 +14,19 @@ firebase.analytics();
 
 const txtemail = document.getElementById('txtemail')
 const txtpassword = document.getElementById('txtpassword')
-const button = document.getElementById('submit')
+const button1 = document.getElementById('sign-in-button')
 
-button.addEventListener('click', e=>{
+button1.addEventListener('click', e=>{
     const email = txtemail.value;
     const password = txtpassword.value;
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+    firebase.auth().signInWithEmailAndPassword(email, password)
     .catch(function (err) {
      console.log(err)
     });
 
-    firebase.auth().onAuthStateChanged(user => {
-        if(user) {
-          window.location = './landing.html';
-        }
-      });
+ firebase.auth().onAuthStateChanged(user => {
+    if(user) {
+      window.location = './landing.html';
+    }
+  });
 });
-
-
-
