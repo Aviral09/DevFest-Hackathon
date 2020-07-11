@@ -22,6 +22,7 @@ button.addEventListener('click', e=>{
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .catch(function (err) {
      console.log(err)
+     alert(err)
     });
 
     firebase.auth().onAuthStateChanged(user => {

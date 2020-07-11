@@ -22,6 +22,7 @@ button1.addEventListener('click', e=>{
     firebase.auth().signInWithEmailAndPassword(email, password)
     .catch(function (err) {
      console.log(err)
+     alert(err)
     });
 
  firebase.auth().onAuthStateChanged(user => {
