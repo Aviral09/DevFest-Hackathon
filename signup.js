@@ -10,20 +10,35 @@ var firebaseConfig = {
   };
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+firebase.analytics(); 
+
+const db = firebase.firestore()
 
 const txtemail = document.getElementById('txtemail')
 const txtpassword = document.getElementById('txtpassword')
 const button = document.getElementById('submit')
+const txtname = document.getElementById('name')
+const txtphone = document.getElementById('phone')
 
 button.addEventListener('click', e=>{
     const email = txtemail.value;
     const password = txtpassword.value;
+    const name = txtname.value;
+    const phone = txtphone.value;
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .catch(function (err) {
      console.log(err)
      alert(err)
-    });
+    }).then(db.collection("users").add({
+      name: name,
+      email: email,
+      phone: phone   
+  })
+  .then(function(doc) {
+      console.log("Document written with ID: ", doc.id);
+  }).catch(function(err){
+    console.log(err)
+  }));
 
     firebase.auth().onAuthStateChanged(user => {
         if(user) {
