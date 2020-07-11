@@ -17,13 +17,17 @@
 
                 <input type="text" id="name" name="name" placeholder="Name" required>
                 <input type="text" id="username" name="username" placeholder="Username" required>
-                <input type="email" id="email" name="email" placeholder="Email" required='true' oninvalid="this.setCustomValidity('Please Enter valid email address')">
+                <input type="email" id="txtemail" name="email" placeholder="Email" required='true' oninvalid="this.setCustomValidity('Please Enter valid email address')">
                 <input type="tel" id="phone" name="Phone " placeholder="Phone Number " pattern="[0-9]{3}[0-9]{3}[0-9]{4} " oninvalid="this.setCustomValidity( 'Please Enter valid phone number') ">
-                <input type="password" id="password" name="password" placeholder="Password" required>
+                <input type="password" id="txtpassword" name="password" placeholder="Password" required>
                 <input type="password" id="again-password" name="re-enter password" placeholder="re-enter Password" required>
-                <div id="submit-button"><button type="submit" id="submit">Sign-up</button></div>
+                <div id="submit-button"><button type="button" id="submit">Sign-up</button></div>
             </form>
         </div>
 </body>
-
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
+<script src="signup.js"></script>
 </html>

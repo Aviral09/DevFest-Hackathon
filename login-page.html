@@ -14,15 +14,19 @@
     <div class="container" id="super-container">
         <div class="container" id="inner-container">
             <form>
-                <input type="text" name="Username" id="username" placeholder="Username">
+                <input type="email" name="email" id="txtemail" placeholder="Username">
                 <br>
-                <input type="password" name="password" id="password" placeholder="Password">
+                <input type="password" name="password" id="txtpassword" placeholder="Password">
                 <br>
-                <div id="sign-in-div"><button id="sign-in-button">Sign in</button></div>
-                <p>Dont have an account yet? Create one! Go to our <a href="signup-page.html">signup page</a></p>
+                <div id="sign-in-div"><button type="button" id="sign-in-button">Sign in</button></div>
+                <p>Dont have an account yet? Create one! Go to our <a href="signup-page.html">Signup</a></p>
             </form>
         </div>
     </div>
 </body>
-
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
+<script src="signup.js"></script>
 </html>

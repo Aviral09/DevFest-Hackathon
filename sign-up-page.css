@@ -8,10 +8,10 @@ body {
 }
 
 #name,
-#email,
+#txtemail,
 #phone,
 #username,
-#password,
+#txtpassword,
 #again-password {
     padding: 10px;
     height: 2.5rem;
