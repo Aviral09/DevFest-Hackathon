@@ -17,12 +17,13 @@ var employees = []
 db.collection("employee").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         employees.push(doc.data())
+        console.log(employees)
         document.getElementById('card-container').innerHTML += `
         <div class="card " style="width: 18rem; ">
             <img class="card-img-top " src="./images/office.jpg" alt="Card image cap ">
             <div class="card-body ">
                 <h5 class="card-title ">${doc.data().name}</h5>
-                <p class="card-text ">Card information</p>
+                <p class="card-text ">Progress: ${doc.data().progress}%</p>
                 <a href="# " class="btn btn-primary ">Go somewhere</a>
             </div>
         </div>
