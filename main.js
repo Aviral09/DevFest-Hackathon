@@ -10,27 +10,14 @@ var firebaseConfig = {
   };
 if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
 
-var user = firebase.auth().currentUser;
-var name, email, photoUrl, uid, emailVerified, employees
-
-if (user != null) {
-  name = user.displayName;
-  email = user.email;
-  photoUrl = user.photoURL;
-}
 
 var db = firebase.firestore()
+var employees = []
 
-db.collection('employee').get().then(function(doc) {
-    if (doc.exists) {
+db.collection("employee").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
         [...employees, doc.data()]
-        //utilize this employees to get data from users
-    } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-    }
-}).catch(function(error) {
-    console.log("Error getting document:", error);
+    });
 });
 
-
+//use employees to get data of employees
