@@ -6,29 +6,29 @@ var firebaseConfig = {
     storageBucket: "officemanagement-3196a.appspot.com",
     messagingSenderId: "810522578256",
     appId: "1:810522578256:web:6a05bc912515494b26f055",
-    measurementId: "G-ELCBHR461S"
-  };
+    measurementId: "G-ELCBHR461S",
+};
 if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
 
+var db = firebase.firestore();
+var employees = [];
 
-var db = firebase.firestore()
-var employees = []
-
-db.collection("employee").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-        employees.push(doc.data())
-        console.log(employees)
-        document.getElementById('card-container').innerHTML += `
+db.collection("employee")
+    .get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            employees.push(doc.data());
+            console.log(employees);
+            document.getElementById("card-container").innerHTML += `
         <div class="card " style="width: 18rem; ">
             <img class="card-img-top " src="./images/office.jpg" alt="Card image cap ">
             <div class="card-body ">
                 <h5 class="card-title ">${doc.data().name}</h5>
                 <p class="card-text ">Progress: ${doc.data().progress}%</p>
-                <a href="# " class="btn btn-primary ">Go somewhere</a>
+                <a href="# " class="btn btn-primary ">View Data</a>
+                <a class=" btn btn-dark btn-lg" href="update.html" role="button">Update</a>
             </div>
         </div>
-        `
+        `;
+        });
     });
-});
-
-
