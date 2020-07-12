@@ -8,7 +8,7 @@ var firebaseConfig = {
     appId: "1:810522578256:web:6a05bc912515494b26f055",
     measurementId: "G-ELCBHR461S"
   };
-firebase.initializeApp(firebaseConfig);
+  if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
 const button1 = document.getElementById('logout')
