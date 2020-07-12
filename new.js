@@ -20,13 +20,15 @@ const txtimage = document.getElementById('image');
 const txtprogress = document.getElementById('progress');
 const txtsalary =document.getElementById('salary');
 
+var user = firebase.auth().currentUser;
+
 button.addEventListener('click',(e)=>{
     const name = txtname.value;
     const description = txtdescription.value;
     const image =txtimage.value;
     const progress = txtprogress.value;
     const salary = txtsalary.value;
-    db.collection('employee').add({
+    db.collection(`employee`).add({
         name: name,
         description: description,
         image: image,
