@@ -13,3 +13,11 @@
 #delete-form {
     display: inline;
 }
+
+.card {
+    margin: 20px;
+}
+
+#card-container {
+    justify-content: center;
+}
