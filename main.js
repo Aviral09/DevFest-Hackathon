@@ -9,9 +9,9 @@ if (user != null) {
 
 var db = firebase.firestore()
 
-db.collections('users').doc(email.toString()).get().then(function(doc) {
+db.collections('employee').get().then(function(doc) {
     if (doc.exists) {
-        employees = doc.data().employees
+        [...employees, doc.data()]
         //utilize this employees to get data from users
     } else {
         // doc.data() will be undefined in this case
