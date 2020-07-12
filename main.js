@@ -21,23 +21,22 @@ db.collection("employee").get().then((querySnapshot) => {
     });
 });
 
-//use employees to get data of employees
-console.log(employees)
-
-function Emp(employees){
-    return `
-    <div class="card " style="width: 18rem; ">
-                    <img class="card-img-top " src="./images/office.jpg" alt="Card image cap ">
-                    <div class="card-body ">
-                        <h5 class="card-title ">${employees.name}</h5>
-                        <p class="card-text ">Card information</p>
-                        <a href="# " class="btn btn-primary ">Go somewhere</a>
-                    </div>
-    </div>hello
-    `
-
+function Emp(){
+    employees.map((employee)=>{
+        console.log(employee.name)
+        return `<div class="card " style="width: 18rem; ">
+            <img class="card-img-top " src="./images/office.jpg" alt="Card image cap ">
+            <div class="card-body ">
+                <h5 class="card-title ">${employee.name}</h5>
+                <p class="card-text ">Card information</p>
+                <a href="# " class="btn btn-primary ">Go somewhere</a>
+            </div>
+        </div>`
+    })
 }
+
 
 document.getElementById("insert").innerHTML = `
     ${employees.map(Emp).join('')}
 `
+console.log(employees)
