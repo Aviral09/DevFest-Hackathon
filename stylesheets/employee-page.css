@@ -22,3 +22,9 @@
 #phone {
     margin-left: 10px;
 }
+
+#info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
