@@ -17,7 +17,7 @@ db.collection("employee").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         document.getElementById('card-container').innerHTML += `
         <div class="card " style="width: 18rem; ">
-            <img class="card-img-top " src="./images/office.jpg" alt="Card image cap ">
+            <img class="card-img-top " src=${doc.data().image} alt="Card image cap ">
             <div class="card-body ">
                 <h5 class="card-title ">${doc.data().name}</h5>
                 <p class="card-text ">Progress: ${doc.data().progress}%</p>
