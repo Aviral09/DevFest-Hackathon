@@ -12,44 +12,35 @@ if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
 
 
 var db = firebase.firestore()
-var employees = []
-
-
 
 db.collection("employee").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-        employees.push(doc.data())
-        console.log(employees)
         document.getElementById('card-container').innerHTML += `
         <div class="card " style="width: 18rem; ">
             <img class="card-img-top " src="./images/office.jpg" alt="Card image cap ">
             <div class="card-body ">
                 <h5 class="card-title ">${doc.data().name}</h5>
                 <p class="card-text ">Progress: ${doc.data().progress}%</p>
-                <a href="# " class="btn btn-primary " data-toggle="modal" data-target="#exampleModalLong">Go somewhere</a>
-            </div>
-        </div>
-        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                <div id="accordion">
+                    <div class="card">
+                    <div class="card-header">
+                        <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                        More Details
+                        </a>
+                    </div>
+                    <div id="collapseOne" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                        Description: ${doc.data().description}<br>
+                        Salary: ${doc.data().salary}
+                        </div>
+                    </div>
+                    </div>
                 </div>
             </div>
         </div>
+        
         `
     });
 });
 
-$('#exampleModalLong').modal('toggle')
+
