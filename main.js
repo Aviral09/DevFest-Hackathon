@@ -16,7 +16,7 @@ var employees = []
 
 db.collection("employee").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-        [...employees, doc.data()]
+        employees.push(doc.data())
     });
 });
 
