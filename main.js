@@ -17,26 +17,17 @@ var employees = []
 db.collection("employee").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         employees.push(doc.data())
-        console.log(doc.data())
-    });
-});
-
-function Emp(){
-    employees.map((employee)=>{
-        console.log(employee.name)
-        return `<div class="card " style="width: 18rem; ">
+        document.getElementById('insert').innerHTML += `
+        <div class="card " style="width: 18rem; ">
             <img class="card-img-top " src="./images/office.jpg" alt="Card image cap ">
             <div class="card-body ">
-                <h5 class="card-title ">${employee.name}</h5>
+                <h5 class="card-title ">${doc.data().name}</h5>
                 <p class="card-text ">Card information</p>
                 <a href="# " class="btn btn-primary ">Go somewhere</a>
             </div>
-        </div>`
-    })
-}
+        </div>
+        `
+    });
+});
 
 
-document.getElementById("insert").innerHTML = `
-    ${employees.map(Emp).join('')}
-`
-console.log(employees)
