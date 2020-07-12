@@ -21,3 +21,21 @@ db.collection("employee").get().then((querySnapshot) => {
 });
 
 //use employees to get data of employees
+
+function Emp(employees){
+    return `
+    <div class="card " style="width: 18rem; ">
+                    <img class="card-img-top " src="./images/office.jpg" alt="Card image cap ">
+                    <div class="card-body ">
+                        <h5 class="card-title ">department</h5>
+                        <p class="card-text ">Card information</p>
+                        <a href="# " class="btn btn-primary ">Go somewhere</a>
+                    </div>
+                </div>
+    `
+
+}
+
+document.getElementById("insert").innerHTML = `
+    ${employees.map(Emp).join('')}
+`
