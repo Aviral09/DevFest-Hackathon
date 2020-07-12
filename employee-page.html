@@ -6,39 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Employee-page</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="stylesheets/main.css">	
-    <link rel="stylesheet" href="landing.css">	
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/employee-page.css">
 </head>
 
 <body>
-    <div class="container">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./landing.html">BACK</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="#">Worksplitz</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" role="button" id="logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="jumbotron">
         <div class="row">
-            <div class="col-md-3">
-                <p class="lead">Data</p>
+            <div id="profile-pic">
+                <img src="https://source.unsplash.com/random/200x200" class="img-fluid" alt="">
+            </div>
+            <div class=" flex-container " id="details">
+                <div class="row">
+                    <i class="fa fa-user my-auto fa-2x" aria-hidden="true"></i>
+                    <h1 id="name" class="my-auto">Name</h1>
+                </div>
+                <div class="row">
+                    <i class="fa fa-envelope my-auto" aria-hidden="true"></i>
+                    <p id="email" class="my-auto">email</p>
+                </div>
+                <div class="row">
+                    <i class="fa fa-mobile my-auto fa-2x" aria-hidden="true"></i>
+                    <p id="phone" class="my-auto">phone</p>
+                </div>
 
             </div>
-            <div class="col-md-9">
-                <div class="thumbnail">
-                    <img class="img-responsive" src="images/austin-distel-wawEfYdpkag-unsplash.jpg">
-                    <div class="caption-full">
-                        <h4 class="pull-right">     </h4>
-                        <h4><a>  </a></h4>
-                        <p>  </p>
-                        <p><em>SUBMITTED BY   </em></p>
-                        
-                        
-                        
-
-                            <a class="btn btn-xs btn-warning" >Edit</a>
-                            <form id="delete-form" >
-                                <button class="btn btn-xs btn-danger">Delete</button>
-                            </form>
-            
-                        
-                        
-               
-                           
+        </div>
+    </div>
 </body>
 
 </html>
