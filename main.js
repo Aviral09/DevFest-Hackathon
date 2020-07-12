@@ -21,4 +21,3 @@ db.collection("employee").get().then((querySnapshot) => {
 });
 
 //use employees to get data of employees
-console.log(employees)
