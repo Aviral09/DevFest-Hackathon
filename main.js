@@ -30,6 +30,7 @@ db.collection("employee")
                     <div class="card-header">
                         <a class="card-link" data-toggle="collapse" href="#collapseOne">
                         More Details
+                        <a class=" btn btn-dark btn-lg" href="update.html" role="button">Update</a>
                         </a>
                     </div>
                     <div id="collapseOne" class="collapse" data-parent="#accordion">
