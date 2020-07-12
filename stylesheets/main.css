@@ -17,6 +17,9 @@
 .card {
     margin: 20px;
 }
+.card:hover{
+    box-shadow: black;
+}
 
 #card-container {
     justify-content: center;
